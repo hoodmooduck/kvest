@@ -1,0 +1,268 @@
+$star-image: "../images/main/star.png";
+
+.main {
+  width: 100%;
+  max-width: 1156px;
+  margin: 24px auto;
+  padding: 0 20px;
+
+  &__breadcrumbs {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+
+    span {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      // не важно скок элементов будет всегда будет →
+      // у всех элементов кроме последнего
+      &:not(:last-child):after {
+        content: '→';
+        pointer-events: none;
+        cursor: none;
+        display: inline-block;
+        margin: 0 10px;
+      }
+    }
+  }
+
+  &__card {
+    width: 100%;
+    max-width: 261px;
+    min-width: 261px;
+    min-height: 432px;
+    padding: 16px 24px;
+    background: var(--white);
+    box-shadow: -2 -2 22px -15px #000;
+
+    &-date {
+      margin-top: 14px;
+      font-size: 13px;
+      color: #868686;
+      margin-bottom: 16px;
+    }
+
+    &-players {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    &-stars {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    &-star {
+      filter: grayscale(1);
+      width: 16px;
+      height: 16px;
+      background-image: url(#{$star-image});
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+
+      &--active {
+        filter: grayscale(0);
+      }
+    }
+
+    &-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    &-text {
+      color: #5E5E5E;
+      font-size: 14px;
+    }
+
+  }
+
+  &__container {
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+  }
+
+  &__reviews {
+    width: 100%;
+    margin-top: 48px;
+
+    &-title {
+      display: flex;
+      margin-bottom: 24px;
+
+      h2 {
+        font-size: 28px;
+      }
+
+      span {
+        display: inline-block;
+        margin-top: 8px;
+        margin-left: 4px;
+        font-size: 14px;
+      }
+    }
+
+    &-container {
+      display: flex;
+      gap: 24px;
+      overflow-x: scroll;
+      padding-bottom: 16px;
+
+      &::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #A8A8A8;
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #DDDDDD;
+      }
+    }
+  }
+
+  .main__banner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px -15px #000;
+
+    &-popular {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--white);
+      padding: 4px 11px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: normal;
+      z-index: 11;
+    }
+
+    &-side {
+      max-width: 297px;
+      width: 100%;
+      z-index: 10;
+      padding: 32px 0 32px 24px;
+    }
+
+    &-title {
+      text-wrap: nowrap;
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    &-tags {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin: 20px 0 12px;
+    }
+
+    &-tag {
+      text-wrap: nowrap;
+      width: max-content;
+      padding: 6px 12px;
+      font-size: 14px;
+      background: rgba(28, 28, 28, 0.05);
+    }
+
+    &-text {
+      font-size: 16px;
+    }
+
+    &-img {
+      width: 100%;
+      max-width: 510px;
+      z-index: 9;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 70%;
+        height: 100%;
+        background: linear-gradient(to right, var(--white), transparent, transparent);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; // позволяет контенту занимать оставшееся пространство
+    min-width: 0
+  }
+
+  &__payment {
+    width: 260px;
+    display: inline-block;
+    height: max-content;
+    max-width: 260px;
+    text-align: center;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    // не могу тень взять фигма бесплатная)
+    // на глаз тут
+    box-shadow: 0 0 20px -15px #000;
+
+    &-button {
+      margin: 0 auto;
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 24px;
+
+      a {
+        color: var(--orange);
+        text-decoration: underline;
+      }
+    }
+
+    &-for {
+      margin-bottom: 24px;
+
+      &_text {
+        margin-bottom: 8px;
+      }
+
+      &_list {
+        width: 100%;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &_item {
+        width: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "sass": "^1.79.4",
+    "vite-plugin-sass": "^0.1.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vituum/vite-plugin-pug": "^1.1.0",
+    "vite": "^5.4.8",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-sass": "^0.1.0"
+  }
+}

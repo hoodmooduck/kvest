@@ -1,0 +1,61 @@
+.header {
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+  box-shadow: 0 0 20px -15px #000;
+
+  &__container {
+    max-width: 1156px;
+    height: 100%;
+    display: flex;
+    min-height: 56px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  &__logo {
+    width: 100%;
+    max-width: 152px;
+    height: auto;
+  }
+
+  &__nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: .3s;
+
+    &:hover {
+      .header__link {
+        &-icon svg path {
+          stroke: var(--orange);
+        }
+
+        &-text {
+          color: var(--orange);
+        }
+      }
+    }
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 4px;
+    }
+
+    &-text {
+      font-size: 10px;
+      font-weight: bold;
+      line-height: 110%;
+    }
+  }
+}
