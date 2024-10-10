@@ -1,6 +1,7 @@
 @use "./vars.scss" as *;
 @use "./header.scss" as *;
-@use "main" as *;
+@use "side-menu" as *;
+@use "./main.scss" as *;
 
 *,
 *::before,
@@ -74,6 +75,7 @@ a {
 // чтобы насрать стилями))
 body {
   width: 100%;
+  position: relative;
   background: var(--main-bg);
 }
 

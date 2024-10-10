@@ -6,10 +6,20 @@ $star-image: "../images/main/star.png";
   margin: 24px auto;
   padding: 0 20px;
 
+  @media (max-width: 767px) {
+    padding: 0 0 85px 0;
+    margin: auto;
+  }
+
   &__breadcrumbs {
     display: flex;
     align-items: center;
     margin-bottom: 32px;
+
+    @media (max-width: 767px) {
+      display: none;
+      margin: 0;
+    }
 
     span {
       font-size: 14px;
@@ -37,6 +47,11 @@ $star-image: "../images/main/star.png";
     padding: 16px 24px;
     background: var(--white);
     box-shadow: -2 -2 22px -15px #000;
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 12px;
+    }
 
     &-date {
       margin-top: 14px;
@@ -88,15 +103,69 @@ $star-image: "../images/main/star.png";
     display: flex;
     gap: 24px;
     justify-content: space-between;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
   }
 
   &__reviews {
     width: 100%;
     margin-top: 48px;
 
+    @media (max-width: 767px) {
+      margin-top: 24px;
+      padding-left: 12px;
+    }
+
+    &-dots {
+      width: 100%;
+      justify-content: center;
+      display: none;
+      height: 8px;
+      gap: 4px;
+
+      @media (max-width: 767px) {
+        display: flex;
+      }
+    }
+
+    &-dot {
+      width: 8px;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+
+      &--active {
+        background: rgba(0, 0, 0, 0.1);
+        width: 16px;
+      }
+    }
+
+    &-button {
+      justify-content: center;
+      min-width: 432px;
+      margin: 24px auto auto auto;
+
+      @media (max-width: 767px) {
+        margin: 24px 0 0 0;
+        width: calc(100% - 12px) !important;
+        min-width: unset;
+      }
+    }
+
     &-title {
       display: flex;
       margin-bottom: 24px;
+
+      @media (max-width: 767px) {
+        margin-bottom: 12px;
+        flex-direction: column;
+
+        h2 {
+          font-size: 24px;
+        }
+      }
 
       h2 {
         font-size: 28px;
@@ -112,13 +181,16 @@ $star-image: "../images/main/star.png";
 
     &-container {
       display: flex;
-      gap: 24px;
       overflow-x: scroll;
       padding-bottom: 16px;
 
       &::-webkit-scrollbar {
         width: 12px;
         height: 12px;
+
+        @media (max-width: 767px) {
+          display: none;
+        }
       }
 
       &::-webkit-scrollbar-thumb {
@@ -132,7 +204,7 @@ $star-image: "../images/main/star.png";
     }
   }
 
-  .main__banner {
+  &__banner {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -141,6 +213,11 @@ $star-image: "../images/main/star.png";
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 0 20px -15px #000;
+
+    @media (max-width: 767px) {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
 
     &-popular {
       position: absolute;
@@ -159,12 +236,21 @@ $star-image: "../images/main/star.png";
       width: 100%;
       z-index: 10;
       padding: 32px 0 32px 24px;
+
+      @media (max-width: 767px) {
+        max-width: unset;
+        padding: 12px 12px 28px 12px;
+      }
     }
 
     &-title {
       text-wrap: nowrap;
       font-size: 36px;
       font-weight: bold;
+
+      @media (max-width: 767px) {
+        font-size: 28px;
+      }
     }
 
     &-tags {
@@ -173,6 +259,12 @@ $star-image: "../images/main/star.png";
       flex-wrap: wrap;
       gap: 4px;
       margin: 20px 0 12px;
+
+      @media (max-width: 767px) {
+        padding: 0 40px;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
     &-tag {
@@ -196,9 +288,20 @@ $star-image: "../images/main/star.png";
       &:before {
         content: '';
         position: absolute;
+        bottom: 0;
         width: 70%;
         height: 100%;
         background: linear-gradient(to right, var(--white), transparent, transparent);
+      }
+
+      @media (max-width: 767px) {
+        max-width: unset;
+
+        &:before {
+          width: 100%;
+          height: 70%;
+          background: linear-gradient(to top, var(--white), transparent, transparent);
+        }
       }
 
       img {
@@ -230,8 +333,26 @@ $star-image: "../images/main/star.png";
     // на глаз тут
     box-shadow: 0 0 20px -15px #000;
 
+    @media (max-width: 767px) {
+      position: fixed;
+      padding: 10px 12px;
+      width: 100%;
+      max-width: unset;
+      bottom: 0;
+      left: 0;
+
+      & *:not(&-button, span) {
+        display: none;
+      }
+    }
+
     &-button {
       margin: 0 auto;
+
+      @media (max-width: 767px) {
+        width: 100% !important;
+        justify-content: space-between;
+      }
     }
 
     &-text {

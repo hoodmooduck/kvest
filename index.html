@@ -9,8 +9,23 @@
     <title>Document</title>
 </head>
 <body>
+<div class="side-menu">
+    <div class="side-menu__close">
+        <span></span><span></span>
+    </div>
+    <div class="side-menu__container">
+        <a href="#" class="side-menu__item">Привет)</a>
+        <a href="#" class="side-menu__item">Что</a>
+        <a href="#" class="side-menu__item">Тут</a>
+        <a href="#" class="side-menu__item">Надо</a>
+        <a href="#" class="side-menu__item">Не знаю))</a>
+    </div>
+</div>
 <header class="header">
     <div class="header__container">
+        <div class="header__burger">
+            <span></span><span></span><span></span>
+        </div>
         <a href="#" class="header__logo">
             <img src="src/assets/images/header/logo.png" alt="logo" class="header__logo">
         </a>
@@ -281,6 +296,16 @@
                     </div>
 
                 </div>
+                <div class="main__reviews-dots">
+                    <div class="main__reviews-dot"></div>
+                    <div class="main__reviews-dot main__reviews-dot--active"></div>
+                    <div class="main__reviews-dot"></div>
+                    <div class="main__reviews-dot"></div>
+                    <div class="main__reviews-dot"></div>
+                </div>
+                <button type="submit" class="main__reviews-button button-main">
+                    <span>Смотреть все отзывы</span>
+                </button>
             </div>
         </div>
         <div class="main__payment">
@@ -310,5 +335,6 @@
 </main>
 <footer class="footer"></footer>
 <script type="module" src="src/main.js"></script>
+<script src="src/assets/js/index.js"></script>
 </body>
 </html>
